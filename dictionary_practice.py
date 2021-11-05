@@ -49,3 +49,36 @@ print(shoes_inventory)
 del shoes_inventory["Nike"]
 del shoes_inventory["Converse"]
 print (shoes_inventory)
+
+def total_price(food_item, food_item2):
+    total = food_prices[food_item] + food_prices[food_item2]
+    return total
+
+def price_dif(food_item, food_item2):
+    dif = food_prices[food_item] - food_prices[food_item2]
+    return abs(dif)
+
+def shoe_restock(shoe, number):
+    shoes_inventory[shoe] *=number
+    return shoes_inventory
+
+def clearance_sale(shoe, number):
+    shoes_inventory[shoe] //=number
+    return shoes_inventory
+
+def age_search(dict):
+    largest = 0
+    age = ''
+
+    for key in dict.keys():
+         if dict[key] > largest:
+             largest = dict[key]
+             age = key
+
+    return (age, largest)
+
+print(total_price("Beef","Cheese"))
+print(price_dif("Beef","Cheese"))
+print(shoe_restock("Yeezy", 3))
+print(clearance_sale("SB Dunk", 2))
+print(age_search(family_age))
