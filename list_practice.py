@@ -25,3 +25,35 @@ del cities[4]
 cities.pop(-4)
 print(cities)
 
+def print_city(list):
+    for el in list:
+        print(el)
+    return "All cities printed"
+
+def reorganize_list(list):
+    # [1,2,3,4,5]
+    print(list)
+    counter = 0
+
+    while counter < len(list):
+        item1 = list[counter]
+        item2 = list[counter]
+
+        if len(item1) >= len(item2):
+            counter += 1
+            continue
+
+        elif counter + 1== len(list) - 1:
+            break
+        else: 
+            list.remove(item1)
+            list.append(item1)
+            counter += 1
+    return list
+
+def sort_list(list):
+    return sorted(list)
+
+print(print_city(cities))
+print(reorganize_list(cities))
+print(sort_list(stores))
